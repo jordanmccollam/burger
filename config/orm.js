@@ -2,17 +2,21 @@ var connection = require("./connection");
 
 var orm = {
 
-    selectAll: function() {
-
+    selectAll: function (table) {
+        var queryString = "SELECT * FROM ??";
+        connection.query(queryString, [table], function(err, result) {
+            if (err) throw err;
+            console.table(result);
+        })
     },
 
-    insertOne: function() {
+    // insertOne: function () {
+    //     var queryString = "";
+    // },
 
-    },
-
-    updateOne: function() {
-
-    }
+    // updateOne: function () {
+    //     var queryString = "";
+    // }
 
 };
 
