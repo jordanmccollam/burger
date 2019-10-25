@@ -4,9 +4,11 @@
             <h1 class="display-3">EAT DA BURGER</h1>
         </div>
     </div>
-    <div class="row text-center">
+    <div class="row text-center mt-5">
         <div class="col-md-6">
-            
+            {{#each burgers}}
+            <p>{{id}}. {{burger_name}} </p>
+            {{/each}}
         </div>
     </div>
 </div>
