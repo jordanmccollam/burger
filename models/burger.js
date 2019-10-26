@@ -10,6 +10,11 @@ var burger = {
         });
     },
 
+    insertOne: function(callback) {
+        orm.insertOne("burgers", "burger_name", function(res) {
+            callback(res);
+        })
+    }
 }
 
 module.exports = burger;

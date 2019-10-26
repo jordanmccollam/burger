@@ -12,6 +12,11 @@ router.use(function(req, res) {
 
         res.render("index", burgersObject);
     })
+});
+
+router.post(function(req, res) {
+    burger.insertOne(req.body);
+    console.log("Burger added");
 })
 
 module.exports = router;
