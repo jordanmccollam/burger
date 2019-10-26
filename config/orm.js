@@ -27,9 +27,15 @@ var orm = {
         })
     },
 
-    // updateOne: function () {
-    //     var queryString = "";
-    // }
+    updateOne: function (table, col, val, callback) {
+        var queryString = "UPDATE ?? SET ?? = ?";
+        connection.query(queryString, [table, col, val], function(err, result) {
+            if (err) throw err;
+
+            console.table(result);
+            callback(result);
+        })
+    }
 
 };
 
