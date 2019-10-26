@@ -16,9 +16,9 @@ var burger = {
         })
     },
 
-    updateOne: function(table, col, val, colToUpdate, valToUpdate, callback) {
-        orm.updateOne("burgers", "devoured", val, "id", valToUpdate, function(res) {
-            
+    updateOne: function(valToUpdate, callback) {
+        orm.updateOne("burgers", "devoured", true, "id", valToUpdate, function(res) {
+            // callback(res);
         })
     }
 }

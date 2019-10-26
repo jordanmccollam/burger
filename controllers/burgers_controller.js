@@ -18,6 +18,11 @@ router.get("/", function(req, res) {
 router.post("/", function(req, res) {
     console.log([req.body.name, false]);
     burger.insertOne(["'" + req.body.name + "'", false]);
+});
+
+router.put("/", function(req, res) {
+    // console.log(req.body.id);
+    burger.updateOne(parseInt(req.body.id));
 })
 
 module.exports = router;
