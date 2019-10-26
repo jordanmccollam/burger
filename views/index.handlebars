@@ -4,15 +4,14 @@
             <h1 class="display-3 customFont">EAT DA BURGER</h1>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="col-md-2 text-right text-warning">
+    <div class="row">
+        <div class="col-12">
             {{#each burgers}}
-            <p class="customFont bigFont">{{id}}. </p>
-            {{/each}}
-        </div>
-        <div class="col-md-5 text-left">
-            {{#each burgers}}
-            <p class="bigFont"> {{burger_name}} </p>
+            <p class="bigFont">
+                <button class="btn btn-warning customFont" id="{{id}}">DEVOUR!!!</button>
+                <span class="customFont">-{{id}}-</span> 
+                {{burger_name}}
+            </p>
             {{/each}}
         </div>
     </div>
