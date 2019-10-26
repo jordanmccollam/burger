@@ -27,9 +27,9 @@ var orm = {
         })
     },
 
-    updateOne: function (table, col, val, callback) {
-        var queryString = "UPDATE ?? SET ?? = ?";
-        connection.query(queryString, [table, col, val], function(err, result) {
+    updateOne: function (table, col, val, colToUpdate, valToUpdate, callback) {
+        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+        connection.query(queryString, [table, col, val, colToUpdate, valToUpdate], function(err, result) {
             if (err) throw err;
 
             console.table(result);
