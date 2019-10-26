@@ -11,9 +11,16 @@ var orm = {
         })
     },
 
-    // insertOne: function () {
-    //     var queryString = ""; 
-    // },
+    insertOne: function (table, cols, vals, callback) {
+        var queryString = "INSERT INTO ??";
+        queryString += "(?)";
+        queryString += "VALUES (?)";
+        connection.query(queryString, [table, cols, vals], function(err, result) {
+            if (err) throw err;
+            console.table(result);
+            callback(result);
+        })
+    },
 
     // updateOne: function () {
     //     var queryString = "";
