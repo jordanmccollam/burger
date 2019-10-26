@@ -12,11 +12,16 @@ var orm = {
     },
 
     insertOne: function (table, cols, vals, callback) {
-        var queryString = "INSERT INTO ??";
-        queryString += "(?)";
-        queryString += "VALUES (?)";
-        connection.query(queryString, [table, cols, vals], function(err, result) {
+        var queryString = "INSERT INTO " + table;
+        queryString += "(";
+        queryString += cols;
+        queryString += ") ";
+        queryString += "VALUES(";
+        queryString += vals;
+        queryString += ") ";
+        connection.query(queryString, function(err, result) {
             if (err) throw err;
+
             console.table(result);
             callback(result);
         })
