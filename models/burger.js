@@ -10,9 +10,9 @@ var burger = {
         });
     },
 
-    insertOne: function(callback) {
-        orm.insertOne("burgers", "burger_name", function(res) {
-            callback(res);
+    insertOne: function(vals, callback) {
+        orm.insertOne("burgers", ["burger_name", "devoured"], vals, function(res) {
+            // callback(res);
         })
     }
 }

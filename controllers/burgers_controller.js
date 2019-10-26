@@ -1,9 +1,10 @@
 var express = require("express");
 var burger = require("../models/burger");
+var connection = require("../config/connection");
 
 var router = express.Router();
 
-router.use(function(req, res) {
+router.get("/", function(req, res) {
     burger.selectAll(function(data) {
 
         var burgersObject = {
@@ -14,9 +15,9 @@ router.use(function(req, res) {
     })
 });
 
-router.post(function(req, res) {
-    burger.insertOne(req.body);
-    console.log("Burger added");
+router.post("/", function(req, res) {
+    console.log([req.body.name, false]);
+    burger.insertOne(["'" + req.body.name + "'", false]);
 })
 
 module.exports = router;
