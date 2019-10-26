@@ -20,7 +20,15 @@ $(document).ready(function() {
     $(".devourBtn").on("click", function() {
         event.preventDefault();
 
-        
+        var idObject = {
+            id: $(this).attr("id")
+        }
+
+        $.ajax("/", {
+            type: "PUT",
+            data: idObject
+        });
+        location.reload();
     })
 
 
