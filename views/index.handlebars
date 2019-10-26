@@ -1,13 +1,18 @@
 <div class="container text-light">
     <div class="row text-center">
         <div class="col-12 text-warning">
-            <h1 class="display-3">EAT DA BURGER</h1>
+            <h1 class="display-3 customFont">EAT DA BURGER</h1>
         </div>
     </div>
-    <div class="row text-center mt-5">
-        <div class="col-md-6">
+    <div class="row text-center">
+        <div class="col-md-2 text-right text-warning">
             {{#each burgers}}
-            <p>{{id}}. {{burger_name}} </p>
+            <p class="customFont bigFont">{{id}}. </p>
+            {{/each}}
+        </div>
+        <div class="col-md-5 text-left">
+            {{#each burgers}}
+            <p class="bigFont"> {{burger_name}} </p>
             {{/each}}
         </div>
     </div>
