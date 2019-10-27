@@ -1,12 +1,18 @@
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-    host: "g9fej9rujq0yt0cd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	",
-    port: 3306,
-    user: "qyxsjdcrup4y1o01",
-    password: "lqjyt9bcltjjl568",
-    database: "rtod9o2x2vkysy6l"
-});
+var connection;
+if (process.env.JAWSDB_URL) {
+    // DB is JAWSDB on Heroku
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: "jojo1997",
+        database: "burgers_db"
+    });
+}
 
 connection.connect(function (err) {
     if (err) {
